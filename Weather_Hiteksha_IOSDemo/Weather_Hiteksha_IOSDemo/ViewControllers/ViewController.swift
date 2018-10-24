@@ -74,8 +74,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Hide UIView & UITableView
         
         objView.isHidden = true
-        let userDefaults = UserDefaults.standard
-        arrBookMark = (userDefaults.object(forKey: "arrBookMark") as! NSArray).mutableCopy() as! NSMutableArray
+        if(isKeyPresentInUserDefaults(key: "arrBookMark"))
+        {
+            let userDefaults = UserDefaults.standard
+            arrBookMark = (userDefaults.object(forKey: "arrBookMark") as! NSArray).mutableCopy() as! NSMutableArray
+        }
         if(self.arrBookMark.count != 0)
         {
             objTableView.isHidden = false
@@ -115,7 +118,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         btnFavorite.layer.cornerRadius = 10
         btnFavorite.layer.borderWidth = 1.0
     }
-    
+    func isKeyPresentInUserDefaults(key: String) -> Bool
+    {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
     // UIButton with Hide/Show PlaceMark
     @IBAction func btnBack(_ sender: UIButton)
     {
@@ -166,8 +172,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 userDefaults.synchronize()
                 
                 arrBookMark = (userDefaults.object(forKey: "arrBookMark") as! NSArray).mutableCopy() as! NSMutableArray
-                print(arrBookMark)
-               
              }
         }
         else
@@ -179,8 +183,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let userDefaults = UserDefaults.standard
                 userDefaults.set(arrBookMarkStored, forKey:"arrBookMark")
                 userDefaults.synchronize()
-            arrBookMark = (userDefaults.object(forKey: "arrBookMark") as! NSArray).mutableCopy() as! NSMutableArray
-           
+                arrBookMark = (userDefaults.object(forKey: "arrBookMark") as! NSArray).mutableCopy() as! NSMutableArray
             }
             btnFavorite.isSelected = false
         }
@@ -210,7 +213,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             {
                 self.objTableView.isHidden = false
                 self.objtbl.reloadData()
-                
             }
             else
             {
@@ -359,6 +361,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
 }
+
 
 // CLLocationManagerDelegate to display Current controller
 extension ViewController : CLLocationManagerDelegate
