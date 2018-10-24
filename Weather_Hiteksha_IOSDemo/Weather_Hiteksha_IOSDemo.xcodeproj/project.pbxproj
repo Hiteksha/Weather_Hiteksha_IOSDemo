@@ -483,13 +483,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = U2VCK8LZLU;
+				DEVELOPMENT_TEAM = S9P43KRDL7;
 				INFOPLIST_FILE = Weather_Hiteksha_IOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hiteksha.Weather-Hiteksha-IOSDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ece81772-851a-49a5-9621-a09ac869fa2c";
-				PROVISIONING_PROFILE_SPECIFIER = "Crypto Calendar Development Profile";
+				PROVISIONING_PROFILE_SPECIFIER = EventRaft_Development_Provisioning;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -501,13 +501,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = U2VCK8LZLU;
+				DEVELOPMENT_TEAM = S9P43KRDL7;
 				INFOPLIST_FILE = Weather_Hiteksha_IOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hiteksha.Weather-Hiteksha-IOSDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fcc26562-e0db-48dc-8dcf-317662c56aa0";
-				PROVISIONING_PROFILE_SPECIFIER = "Crypto Calendar Distribution Profile";
+				PROVISIONING_PROFILE_SPECIFIER = EventRaft_Distributon_Profile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
