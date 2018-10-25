@@ -72,7 +72,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         // Hide UIView & UITableView
-        
+        //For unit testcase demo
+        print(3.Sqaure())
+    
         objView.isHidden = true
         if(isKeyPresentInUserDefaults(key: "arrBookMark"))
         {
@@ -362,7 +364,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 }
 
-
+extension Int
+{
+    func Sqaure() -> Int{
+        return self * self
+    }
+}
 // CLLocationManagerDelegate to display Current controller
 extension ViewController : CLLocationManagerDelegate
 {
